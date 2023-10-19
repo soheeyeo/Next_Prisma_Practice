@@ -22,6 +22,8 @@ body {
     height: 100vh;
     margin: 0;
     overflow: scroll;
+    background-color: #121826;
+    color: white;
 }
 
 a {
