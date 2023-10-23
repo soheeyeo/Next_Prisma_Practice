@@ -2,14 +2,19 @@
 
 import Head from "next/head";
 import PostForm from "../_components/PostForm";
+import axios from "axios";
 
 interface contentsProps {
     language: string;
     code: string;
 }
 
-const handleSubmit = ({ language, code }: contentsProps) => {
-    console.log(language, code);
+const handleSubmit = async ({ language, code }: contentsProps) => {
+    const { data } = await axios.post("/api/posts", {
+        language,
+        code,
+    });
+    console.log(data);
 };
 
 export default function AddPost() {
