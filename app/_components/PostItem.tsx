@@ -1,12 +1,11 @@
 import Link from "next/link";
-
 import formatTimeAgo from "@/utils/timeAgo";
 import highlight from "@/utils/highlight";
-import { PostType } from "@/types/post";
+import PostIcon from "./PostIcon";
 
 interface PostFormProps {
     href: string;
-    post: PostType;
+    post: any;
 }
 
 const PostItem = ({ href, post }: PostFormProps) => {
@@ -45,6 +44,13 @@ const PostItem = ({ href, post }: PostFormProps) => {
                         )}
                     </pre>
                 </Link>
+            </div>
+            <div className="flex flex-col items-center pb-3">
+                <PostIcon
+                    liked={post.liked}
+                    totalComments={post.totalComments}
+                    totalLikes={post.totalLikes}
+                />
             </div>
         </div>
     );

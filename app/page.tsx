@@ -1,3 +1,4 @@
+"use client";
 import { prisma } from "@/server/db/client";
 import { PostType } from "@/types/post";
 import styles from "./page.module.css";
@@ -30,15 +31,6 @@ const Home: NextPage<Props> = async () => {
                                 <PostItem
                                     post={post}
                                     href={`/code/${post.id}`}
-                                    onLike={() =>
-                                        console.log("like post", post.id)
-                                    }
-                                    onComment={() =>
-                                        console.log("comment post", post.id)
-                                    }
-                                    onShare={() =>
-                                        console.log("share post", post.id)
-                                    }
                                 />
                             </li>
                         ))}
