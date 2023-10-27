@@ -7,5 +7,4 @@ export interface PostType {
     totalComments: number;
     createdAt: Date;
     updatedAt: Date;
-    liked: boolean;
 }
