@@ -1,6 +1,5 @@
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "../../server/db/client";
 import { NextApiRequest, NextApiResponse } from "next";
-const prisma = new PrismaClient();
 
 function setTitle(code: string) {
     return code.trim().split("\n")[0].replace("// ", "");
